@@ -11,6 +11,10 @@
 		CDC97F4E27186CC30010472C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F4D27186CC30010472C /* ContentView.swift */; };
 		CDC97F5027186CC50010472C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC97F4F27186CC50010472C /* Assets.xcassets */; };
 		CDC97F5327186CC50010472C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC97F5227186CC50010472C /* Preview Assets.xcassets */; };
+		CDC97F5B27186F2D0010472C /* Rod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F5A27186F2D0010472C /* Rod.swift */; };
+		CDC97F5D271877F70010472C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F5C271877F70010472C /* Node.swift */; };
+		CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F5E271878B00010472C /* LinearLoad.swift */; };
+		CDC97F61271879000010472C /* RodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F60271879000010472C /* RodTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		CDC97F4F27186CC50010472C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC97F5227186CC50010472C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CDC97F5427186CC50010472C /* SAPR_SwiftEdition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SAPR_SwiftEdition.entitlements; sourceTree = "<group>"; };
+		CDC97F5A27186F2D0010472C /* Rod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rod.swift; sourceTree = "<group>"; };
+		CDC97F5C271877F70010472C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		CDC97F5E271878B00010472C /* LinearLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearLoad.swift; sourceTree = "<group>"; };
+		CDC97F60271879000010472C /* RodTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				CDC97F4B27186CC30010472C /* SAPR_SwiftEditionApp.swift */,
 				CDC97F4D27186CC30010472C /* ContentView.swift */,
+				CDC97F60271879000010472C /* RodTableView.swift */,
+				CDC97F5A27186F2D0010472C /* Rod.swift */,
+				CDC97F5C271877F70010472C /* Node.swift */,
+				CDC97F5E271878B00010472C /* LinearLoad.swift */,
 				CDC97F4F27186CC50010472C /* Assets.xcassets */,
 				CDC97F5427186CC50010472C /* SAPR_SwiftEdition.entitlements */,
 				CDC97F5127186CC50010472C /* Preview Content */,
@@ -140,7 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC97F4E27186CC30010472C /* ContentView.swift in Sources */,
+				CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */,
+				CDC97F5B27186F2D0010472C /* Rod.swift in Sources */,
 				CDC97F4C27186CC30010472C /* SAPR_SwiftEditionApp.swift in Sources */,
+				CDC97F5D271877F70010472C /* Node.swift in Sources */,
+				CDC97F61271879000010472C /* RodTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
