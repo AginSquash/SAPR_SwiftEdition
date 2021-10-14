@@ -12,9 +12,9 @@ struct RodTableView: View {
     
     var body: some View {
         VStack {
-            HStack{
-                Spacer()
-                    .frame(width: 40)
+            HStack {
+                Text("Номер стержня")
+                    .frame(width: RodTableView.column_width)
                 Text("L стержня")
                     .frame(width: RodTableView.column_width)
                 Text("Допускаемое напряжение Е")
@@ -26,8 +26,6 @@ struct RodTableView: View {
             }
         }
     }
-    
-    
 }
 
 struct RodTableView_Previews: PreviewProvider {
