@@ -25,16 +25,21 @@ struct RodTableView: View {
                 Text("Предел прочночти")
                     .frame(width: RodTableView.column_width)
             }
+            
             ForEach(Rods, id: \.id) { rod in
-                RodTableRowView(column_width: RodTableView.column_width, rod: Binding<Rod>(get: { Rods[rod.id] }, set: { Rods[rod.id] = $0 } ))
+                RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
             }
             Button("Add", action: {
                 self.Rods.append(Rod(id: Rods.count+1, L: 0, A: 0, E: 0, Sigma: 0))
-                
+                print(Rods)
             })
             Spacer()
         }
         .padding()
+    }
+    
+    func updateRod(with id: Int, L: Float, A: Float, E: Float, Sigma: Float) {
+        self.Rods[id-1] = Rod(id: id, L: L, A: A, E: E, Sigma: Sigma)
     }
 }
 

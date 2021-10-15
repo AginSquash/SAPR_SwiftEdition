@@ -16,7 +16,7 @@
 		CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F5E271878B00010472C /* LinearLoad.swift */; };
 		CDC97F61271879000010472C /* RodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F60271879000010472C /* RodTableView.swift */; };
 		CDC97F6327187CAC0010472C /* RodTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6227187CAC0010472C /* RodTableRowView.swift */; };
-		CDC97F6627187F9B0010472C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6527187F9B0010472C /* Utils.swift */; };
+		CDC97F6627187F9B0010472C /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6527187F9B0010472C /* Binding-OnChange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		CDC97F5E271878B00010472C /* LinearLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearLoad.swift; sourceTree = "<group>"; };
 		CDC97F60271879000010472C /* RodTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodTableView.swift; sourceTree = "<group>"; };
 		CDC97F6227187CAC0010472C /* RodTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodTableRowView.swift; sourceTree = "<group>"; };
-		CDC97F6527187F9B0010472C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CDC97F6527187F9B0010472C /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				CDC97F5A27186F2D0010472C /* Rod.swift */,
 				CDC97F5C271877F70010472C /* Node.swift */,
 				CDC97F5E271878B00010472C /* LinearLoad.swift */,
-				CDC97F6527187F9B0010472C /* Utils.swift */,
+				CDC97F6527187F9B0010472C /* Binding-OnChange.swift */,
 				CDC97F4F27186CC50010472C /* Assets.xcassets */,
 				CDC97F5427186CC50010472C /* SAPR_SwiftEdition.entitlements */,
 				CDC97F5127186CC50010472C /* Preview Content */,
@@ -172,7 +172,7 @@
 				CDC97F4C27186CC30010472C /* SAPR_SwiftEditionApp.swift in Sources */,
 				CDC97F5D271877F70010472C /* Node.swift in Sources */,
 				CDC97F61271879000010472C /* RodTableView.swift in Sources */,
-				CDC97F6627187F9B0010472C /* Utils.swift in Sources */,
+				CDC97F6627187F9B0010472C /* Binding-OnChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
