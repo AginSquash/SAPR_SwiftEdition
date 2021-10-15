@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rod: Codable, Identifiable {
+struct Rod: Codable, Identifiable, Hashable {
     let id: Int
     let L: Float /// Length
     let A: Float /// Area

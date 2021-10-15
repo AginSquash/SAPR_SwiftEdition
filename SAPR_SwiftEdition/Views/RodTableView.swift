@@ -10,6 +10,7 @@ import SwiftUI
 struct RodTableView: View {
     static let column_width: CGFloat? = 100
     
+    @State private var Rods: [Rod] = []
     var body: some View {
         VStack {
             HStack {
@@ -24,7 +25,16 @@ struct RodTableView: View {
                 Text("Предел прочночти")
                     .frame(width: RodTableView.column_width)
             }
+            ForEach(Rods, id: \.id) { rod in
+                RodTableRowView(column_width: RodTableView.column_width, rod: Binding<Rod>(get: { Rods[rod.id] }, set: { Rods[rod.id] = $0 } ))
+            }
+            Button("Add", action: {
+                self.Rods.append(Rod(id: Rods.count+1, L: 0, A: 0, E: 0, Sigma: 0))
+                
+            })
+            Spacer()
         }
+        .padding()
     }
 }
 
