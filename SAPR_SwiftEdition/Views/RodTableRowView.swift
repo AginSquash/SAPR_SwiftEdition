@@ -20,24 +20,30 @@ struct RodTableRowView: View {
     @State private var Sigma: String = ""
     
     var body: some View {
-        HStack {
-            Text("\(rod.id)")
-                .frame(width: column_width)
+        ZStack {
             Group {
-                TextField("", text: $L.onChange(changed), onEditingChanged:
-                            { _ in NumberOnly(text: $L) })
-                    .frame(width: column_width)
-                TextField("", text: $A.onChange(changed), onEditingChanged:
-                            { _ in NumberOnly(text: $A) })
-                    .frame(width: column_width)
-                TextField("", text: $E.onChange(changed), onEditingChanged:
-                            { _ in NumberOnly(text: $E) })
-                    .frame(width: column_width)
-                TextField("", text: $Sigma.onChange(changed), onEditingChanged:
-                            { _ in NumberOnly(text: $Sigma) })
-                    .frame(width: column_width)
+                if rod.id % 2 == 0 {
+                    Color.gray
+                } else {
+                    Color.black
+                }
             }
-            .multilineTextAlignment(.trailing)
+            .frame(height: 25)
+            HStack {
+                Text("\(rod.id)")
+                    .frame(width: column_width)
+                Group {
+                    Text("\(rod.L)")
+                        .frame(width: column_width)
+                    Text("\(rod.A)")
+                        .frame(width: column_width)
+                    Text("\(rod.E)")
+                        .frame(width: column_width)
+                    Text("\(rod.Sigma)")
+                        .frame(width: column_width)
+                }
+                .multilineTextAlignment(.trailing)
+            }
         }
     }
     
