@@ -30,7 +30,13 @@ struct RodTableView: View {
             
             ForEach(Rods, id: \.id) { rod in
                 RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
+           
+            ScrollView(.vertical, showsIndicators: true) {
+                    ForEach(Rods, id: \.id) { rod in
+                        RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
+                    }
             }
+            
             Button("Add", action: {
                 self.editRodValue = Rod.sample(with: Rods.count + 1)
             })
