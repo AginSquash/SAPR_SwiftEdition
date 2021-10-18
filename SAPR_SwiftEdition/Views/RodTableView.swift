@@ -26,6 +26,11 @@ struct RodTableView: View {
                     .frame(width: RodTableView.column_width)
                 Text("Предел прочночти")
                     .frame(width: RodTableView.column_width)
+                
+                /// free sapce for Edit and Delete buttons
+                Spacer()
+                    .frame(width: 100, height: 25, alignment: .center)
+                
             }
             
            
