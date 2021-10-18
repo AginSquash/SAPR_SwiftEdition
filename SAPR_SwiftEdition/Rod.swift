@@ -13,4 +13,8 @@ struct Rod: Codable, Identifiable, Hashable {
     let A: Float /// Area
     let E: Float /// Elasticity
     let Sigma: Float /// Permissible voltage
+    
+    static func sample(with id: Int) -> Rod {
+        Rod(id: id, L: 0, A: 0, E: 0, Sigma: 0)
+    }
 }
