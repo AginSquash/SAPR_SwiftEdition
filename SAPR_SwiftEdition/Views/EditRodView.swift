@@ -69,7 +69,6 @@ struct EditRodView: View {
                 }
                 Button("Save") {
                     save()
-                    closeView()
                 }
             }
         }
@@ -88,7 +87,26 @@ struct EditRodView: View {
             fatalError("updateRod is nil!")
         }
         
+        guard let L = Float(self.L) else {
+            alert = AlertType(isError: true, text: "L должен быть числом")
+            return
+        }
+        guard let A = Float(self.A) else {
+            alert = AlertType(isError: true, text: "A должен быть числом")
+            return
+        }
+        guard let E = Float(self.E) else {
+            alert = AlertType(isError: true, text: "E должен быть числом")
+            return
+        }
+        guard let Sigma = Float(self.Sigma) else {
+            alert = AlertType(isError: true, text: "Sigma должен быть числом")
+            return
+        }
         
+        updateRod(rod.id, L, A, E, Sigma)
+        
+        closeView()
     }
     
     func NumberOnly(text: Binding<String>) {
