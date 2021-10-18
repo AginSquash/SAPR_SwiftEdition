@@ -21,14 +21,16 @@ struct RodTableRowView: View {
     
     var body: some View {
         ZStack {
+            
             Group {
                 if rod.id % 2 == 0 {
-                    Color.gray
+                    Color.init(red: 35/255, green: 35/255, blue: 40/255)
                 } else {
-                    Color.black
+                    Color.init(red: 45/255, green: 45/255, blue: 50/255)
                 }
             }
             .frame(height: 25)
+            
             HStack {
                 Text("\(rod.id)")
                     .frame(width: column_width)
