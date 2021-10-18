@@ -11,6 +11,8 @@ struct RodTableView: View {
     static let column_width: CGFloat? = 100
     
     @State private var Rods: [Rod] = []
+    @State private var editRodValue: Rod? = nil
+    
     var body: some View {
         VStack {
             HStack {
@@ -30,16 +32,24 @@ struct RodTableView: View {
                 RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
             }
             Button("Add", action: {
-                self.Rods.append(Rod(id: Rods.count+1, L: 0, A: 0, E: 0, Sigma: 0))
-                print(Rods)
+                self.editRodValue = Rod.sample(with: Rods.count + 1)
             })
             Spacer()
         }
         .padding()
+        .sheet(item: $editRodValue, onDismiss: nil) { value in
+            EditRodView(rod: value, updateRod: self.updateRod)
+        }
+        
     }
     
     func updateRod(with id: Int, L: Float, A: Float, E: Float, Sigma: Float) {
-        self.Rods[id-1] = Rod(id: id, L: L, A: A, E: E, Sigma: Sigma)
+        if self.Rods.count < id {
+            self.Rods.append(Rod(id: id, L: L, A: A, E: E, Sigma: Sigma))
+        } else {
+            self.Rods[id-1] = Rod(id: id, L: L, A: A, E: E, Sigma: Sigma)
+        }
+        print(Rods)
     }
 }
 
