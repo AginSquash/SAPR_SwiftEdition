@@ -45,6 +45,21 @@ struct RodTableRowView: View {
                         .frame(width: column_width)
                 }
                 .multilineTextAlignment(.trailing)
+                
+                
+                Button(action: { } ) {
+                    Image(systemName: "pencil")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 15, alignment: .center)
+                }
+                
+                Button(action: { } ) {
+                    Image(systemName: "trash")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 15, alignment: .center)
+                }
             }
         }
     }
