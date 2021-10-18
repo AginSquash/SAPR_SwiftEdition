@@ -34,6 +34,11 @@ struct RodTableView: View {
             Button("Add", action: {
                 self.editRodValue = Rod.sample(with: Rods.count + 1)
             })
+            Button("Random", action: {
+                for _ in 0...5 {
+                    self.Rods.append(Rod(id: self.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
+                }
+            })
             Spacer()
         }
         .padding()
