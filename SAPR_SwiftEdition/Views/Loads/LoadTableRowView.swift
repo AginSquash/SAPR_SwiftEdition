@@ -31,7 +31,7 @@ struct LoadTableRowView: View {
     }
 }
 
-struct AddLoadView_Previews: PreviewProvider {
+struct LoadTableRowView_Previews: PreviewProvider {
     static var previews: some View {
         LoadTableRowView(column_width: 125, rowID: 1, load: LinearLoad(id: 1, q: 10))
     }
