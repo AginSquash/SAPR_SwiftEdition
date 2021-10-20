@@ -9,9 +9,10 @@ import SwiftUI
 
 class ConstructionDataController: ObservableObject {
     @Published var Rods: [Rod]
-    
+    @Published var Loads: [LinearLoad]
     init(inMemory: Bool = false) {
         self.Rods = []
+        self.Loads = []
     }
     
     static var preview: ConstructionDataController = {
