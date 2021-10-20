@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var ConctructionDC = ConstructionDataController()
-    @State private var selected: Int? = 0
+    @State private var selected: Int? = 1
     
     var body: some View {
         NavigationView {
@@ -18,7 +18,7 @@ struct MainView: View {
                 Section(header: Text("Ввод данных")) {
                     NavigationLink("Стержни", destination: RodTableView(ConctructionDC: ConctructionDC))
                         .tag(0)
-                    NavigationLink("ContentView", destination: ContentView())
+                    NavigationLink("Нагрузки", destination: RodLoads())
                         .tag(1)
                 }
             }
