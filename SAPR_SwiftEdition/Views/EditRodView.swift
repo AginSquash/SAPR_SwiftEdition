@@ -82,6 +82,16 @@ struct EditRodView: View {
         }
     }
     
+    init(rod: Rod, updateRod: ((_ id: Int, _ L: Float, _ A: Float, _ E: Float, _ Sigma: Float) -> Void)? = nil) {
+        self.rod = rod
+        self.updateRod = updateRod
+        
+        _L = State(wrappedValue: String(rod.L))
+        _A = State(wrappedValue: String(rod.A))
+        _E = State(wrappedValue: String(rod.E))
+        _Sigma = State(wrappedValue: String(rod.Sigma))
+    }
+    
     func save() {
         guard let updateRod = updateRod else {
             fatalError("updateRod is nil!")

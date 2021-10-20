@@ -12,7 +12,6 @@ struct RodTableView: View {
     
     @ObservedObject var ConctructionDC: ConstructionDataController
     
-   // @State private var Rods: [Rod] = []
     @State private var editRodValue: Rod? = nil
     
     var body: some View {
@@ -38,8 +37,22 @@ struct RodTableView: View {
            
             ScrollView(.vertical, showsIndicators: true) {
                 ForEach(ConctructionDC.Rods, id: \.id) { rod in
+                    HStack {
                         RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
-                            .padding(.bottom, -5)
+                        
+                        Button(action: { editRod(rod) } ) {
+                            Image(systemName: "pencil")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 15, alignment: .center)
+                        }
+                        Button(action: { deleteRod(rod) } ) {
+                            Image(systemName: "trash")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 15, alignment: .center)
+                            }
+                        }.padding(.bottom, -5)
                     }
             }
             
@@ -60,6 +73,14 @@ struct RodTableView: View {
         
     }
     
+    func editRod(_ rod: Rod) {
+        editRodValue = rod
+    }
+    
+    func deleteRod(_ rod: Rod) {
+        
+    }
+    
     func updateRod(with id: Int, L: Float, A: Float, E: Float, Sigma: Float) {
         if self.ConctructionDC.Rods.count < id {
             self.ConctructionDC.Rods.append(Rod(id: id, L: L, A: A, E: E, Sigma: Sigma))
@@ -69,6 +90,7 @@ struct RodTableView: View {
         print(ConctructionDC.Rods)
     }
 }
+
 
 struct RodTableView_Previews: PreviewProvider {
     static var previews: some View {
