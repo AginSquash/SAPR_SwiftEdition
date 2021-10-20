@@ -8,8 +8,48 @@
 import SwiftUI
 
 struct RodLoads: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    static let column_width: CGFloat? = 125
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    //.foregroundColor(Color.init(red: 39/255, green: 80/255, blue: 171/255)) /// <- грязный цвет ахаха
+                    .foregroundColor(Color.init(red: 0/255, green: 70/255, blue: 184/255))
+                    .shadow(radius: 15)
+                VStack {
+                    HStack {
+                        Text("Номер стержня")
+                            .frame(width: RodLoads.column_width)
+                        Text("Распределенная нагрузка")
+                            .frame(width: RodLoads.column_width)
+                    }.foregroundColor(.white)
+                        Spacer()
+                }
+                .padding()
+            }
+            
+            Spacer()
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .foregroundColor(Color.init(red: 141/255, green: 49/255, blue: 171/255))
+                     
+                VStack {
+                    HStack {
+                        Text("Номер стержня")
+                            .frame(width: RodLoads.column_width)
+                        Text("Распределенная нагрузка")
+                            .frame(width: RodLoads.column_width)
+                    }.foregroundColor(.white)
+                        Spacer()
+                }
+                .padding()
+            }
+        }
+        .padding()
     }
 }
 

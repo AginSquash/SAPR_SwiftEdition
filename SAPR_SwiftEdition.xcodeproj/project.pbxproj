@@ -77,6 +77,7 @@
 				CDC97F4B27186CC30010472C /* SAPR_SwiftEditionApp.swift */,
 				CDC97F6427187F730010472C /* Views */,
 				CDC97F5A27186F2D0010472C /* Rod.swift */,
+				CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */,
 				CDC97F5C271877F70010472C /* Node.swift */,
 				CDC97F5E271878B00010472C /* LinearLoad.swift */,
 				CDC97F6527187F9B0010472C /* Binding-OnChange.swift */,
@@ -105,7 +106,6 @@
 				CDA73E5B27202396002886F5 /* MainView.swift */,
 				CDA73E5D27202F40002886F5 /* ConstructionDataController.swift */,
 				CDC97F6227187CAC0010472C /* RodTableRowView.swift */,
-				CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
