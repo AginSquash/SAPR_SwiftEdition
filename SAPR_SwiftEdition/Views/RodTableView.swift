@@ -10,7 +10,9 @@ import SwiftUI
 struct RodTableView: View {
     static let column_width: CGFloat? = 100
     
-    @State private var Rods: [Rod] = []
+    @ObservedObject var ConctructionDC: ConstructionDataController
+    
+   // @State private var Rods: [Rod] = []
     @State private var editRodValue: Rod? = nil
     
     var body: some View {
@@ -35,18 +37,18 @@ struct RodTableView: View {
             
            
             ScrollView(.vertical, showsIndicators: true) {
-                    ForEach(Rods, id: \.id) { rod in
+                ForEach(ConctructionDC.Rods, id: \.id) { rod in
                         RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
                             .padding(.bottom, -5)
                     }
             }
             
             Button("Add", action: {
-                self.editRodValue = Rod.sample(with: Rods.count + 1)
+                self.editRodValue = Rod.sample(with: ConctructionDC.Rods.count + 1)
             })
             Button("Random", action: {
                 for _ in 0...5 {
-                    self.Rods.append(Rod(id: self.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
+                    self.ConctructionDC.Rods.append(Rod(id: self.ConctructionDC.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
                 }
             })
             Spacer()
@@ -59,18 +61,18 @@ struct RodTableView: View {
     }
     
     func updateRod(with id: Int, L: Float, A: Float, E: Float, Sigma: Float) {
-        if self.Rods.count < id {
-            self.Rods.append(Rod(id: id, L: L, A: A, E: E, Sigma: Sigma))
+        if self.ConctructionDC.Rods.count < id {
+            self.ConctructionDC.Rods.append(Rod(id: id, L: L, A: A, E: E, Sigma: Sigma))
         } else {
-            self.Rods[id-1] = Rod(id: id, L: L, A: A, E: E, Sigma: Sigma)
+            self.ConctructionDC.Rods[id-1] = Rod(id: id, L: L, A: A, E: E, Sigma: Sigma)
         }
-        print(Rods)
+        print(ConctructionDC.Rods)
     }
 }
 
 struct RodTableView_Previews: PreviewProvider {
     static var previews: some View {
-        RodTableView()
+        RodTableView(ConctructionDC: ConstructionDataController.preview)
             .frame(width: 700, height: 400, alignment: .center)
     }
 }

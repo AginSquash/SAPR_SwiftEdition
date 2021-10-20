@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var ConctructionDC = ConstructionDataController()
+    
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("RodTableView", destination: RodTableView())
+                NavigationLink("RodTableView", destination: RodTableView(ConctructionDC: ConctructionDC))
                 NavigationLink("ContentView", destination: ContentView())
             }
             Text("Select a Note")
