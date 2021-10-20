@@ -84,13 +84,15 @@ struct RodTableView: View {
     }
     
     func deleteRod(_ rod: Rod) {
-        withAnimation {
+        withAnimation(.easeIn(duration: 0.4)) {
             _ = ConctructionDC.Rods.remove(at: rod.id - 1)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             for i in 0..<ConctructionDC.Rods.count {
-                ConctructionDC.Rods[i].id = i + 1
+                withAnimation(.easeIn(duration: 0.4)) {
+                    ConctructionDC.Rods[i].id = i + 1
+                }
             }
         }
     }
