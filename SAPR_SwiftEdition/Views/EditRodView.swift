@@ -64,8 +64,11 @@ struct EditRodView: View {
             
             HStack {
                 Button("Decline") {
-                    alert = AlertType(isError: false, text: "Вы уверены что хотите отменить все изменения?")
-                    //presentationMode.wrappedValue.dismiss()
+                    if areAnyChanges() {
+                        alert = AlertType(isError: false, text: "Вы уверены что хотите отменить все изменения?")
+                    } else {
+                        closeView()
+                    }
                 }
                 Button("Save") {
                     save()
@@ -117,6 +120,19 @@ struct EditRodView: View {
         updateRod(rod.id, L, A, E, Sigma)
         
         closeView()
+    }
+    
+    func areAnyChanges() -> Bool {
+        let L = String(rod.L)
+        let A = String(rod.A)
+        let E = String(rod.E)
+        let Sigma = String(rod.Sigma)
+        
+        if (L == self.L) && (A == self.A) && (E == self.E) && (Sigma == self.Sigma) {
+            return false
+        } else {
+            return true
+        }
     }
     
     func NumberOnly(text: Binding<String>) {
