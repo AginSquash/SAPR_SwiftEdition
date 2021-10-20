@@ -23,6 +23,7 @@
 		CDE8D4C72720A4F300BFA18F /* Loads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8D4C62720A4F300BFA18F /* Loads.swift */; };
 		CDEB80302720B2C50019803E /* BackgroundColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */; };
 		CDEB80322720C02D0019803E /* LoadTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB80312720C02D0019803E /* LoadTableRowView.swift */; };
+		CDEB80362720C60F0019803E /* AddLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB80352720C60F0019803E /* AddLoadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CDE8D4C62720A4F300BFA18F /* Loads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loads.swift; sourceTree = "<group>"; };
 		CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorHelper.swift; sourceTree = "<group>"; };
 		CDEB80312720C02D0019803E /* LoadTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTableRowView.swift; sourceTree = "<group>"; };
+		CDEB80352720C60F0019803E /* AddLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				CDE8D4C62720A4F300BFA18F /* Loads.swift */,
 				CDEB80312720C02D0019803E /* LoadTableRowView.swift */,
+				CDEB80352720C60F0019803E /* AddLoadView.swift */,
 			);
 			path = Loads;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC97F6327187CAC0010472C /* RodTableRowView.swift in Sources */,
+				CDEB80362720C60F0019803E /* AddLoadView.swift in Sources */,
 				CDC97F4E27186CC30010472C /* ContentView.swift in Sources */,
 				CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */,
 				CDA73E5C27202396002886F5 /* MainView.swift in Sources */,
