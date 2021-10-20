@@ -35,6 +35,7 @@ struct RodTableView: View {
                     .frame(width: 100, height: 25, alignment: .center)
                 
             }
+            .multilineTextAlignment(.center)
             
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 0) {
