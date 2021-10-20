@@ -10,7 +10,6 @@ import SwiftUI
 struct LoadTableRowView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    let column_width: CGFloat?
     let rowID: Int
     let load: LinearLoad
     
@@ -22,10 +21,9 @@ struct LoadTableRowView: View {
             
             HStack {
                 Text("\(load.id)")
-                    .frame(width: column_width)
+                    .frame(width: Loads.column_width)
                 Text("\(load.q)")
-                    .frame(width: column_width)
-                    .multilineTextAlignment(.trailing)
+                    .frame(width: Loads.column_width)
             }
         }
     }
@@ -33,6 +31,6 @@ struct LoadTableRowView: View {
 
 struct LoadTableRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadTableRowView(column_width: 125, rowID: 1, load: LinearLoad(id: 1, q: 10))
+        LoadTableRowView(rowID: 1, load: LinearLoad(id: 1, q: 10))
     }
 }
