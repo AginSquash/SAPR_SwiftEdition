@@ -45,7 +45,7 @@ struct RodTableView: View {
                             getBackColor(with: rod.id, colorScheme: colorScheme)
                             
                             HStack {
-                                RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
+                                RodTableRowView(column_width: RodTableView.column_width, rod: rod)
                                     .frame(height: 25)
                                 
                                 Button(action: { editRod(rod) } ) {
