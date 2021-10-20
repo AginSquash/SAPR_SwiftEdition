@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct RodLoads: View {
-    @Environment(\.colorScheme) var colorScheme
-    
+struct Loads: View {    
     static let column_width: CGFloat? = 125
+    
+    @ObservedObject var ConctructionDC: ConstructionDataController
     
     var body: some View {
         HStack {
@@ -22,9 +22,10 @@ struct RodLoads: View {
                 VStack {
                     HStack {
                         Text("Номер стержня")
-                            .frame(width: RodLoads.column_width)
+                            .frame(width: Loads.column_width)
                         Text("Распределенная нагрузка")
-                            .frame(width: RodLoads.column_width)
+                            .frame(width: Loads.column_width)
+                        
                     }.foregroundColor(.white)
                         Spacer()
                 }
@@ -40,9 +41,9 @@ struct RodLoads: View {
                 VStack {
                     HStack {
                         Text("Номер стержня")
-                            .frame(width: RodLoads.column_width)
+                            .frame(width: Loads.column_width)
                         Text("Распределенная нагрузка")
-                            .frame(width: RodLoads.column_width)
+                            .frame(width: Loads.column_width)
                     }.foregroundColor(.white)
                         Spacer()
                 }
@@ -55,6 +56,6 @@ struct RodLoads: View {
 
 struct RodLoads_Previews: PreviewProvider {
     static var previews: some View {
-        RodLoads()
+        Loads(ConctructionDC: ConstructionDataController.preview)
     }
 }

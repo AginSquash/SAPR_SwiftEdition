@@ -20,7 +20,7 @@
 		CDC97F61271879000010472C /* RodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F60271879000010472C /* RodTableView.swift */; };
 		CDC97F6327187CAC0010472C /* RodTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6227187CAC0010472C /* RodTableRowView.swift */; };
 		CDC97F6627187F9B0010472C /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6527187F9B0010472C /* Binding-OnChange.swift */; };
-		CDE8D4C72720A4F300BFA18F /* RodLoads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8D4C62720A4F300BFA18F /* RodLoads.swift */; };
+		CDE8D4C72720A4F300BFA18F /* Loads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8D4C62720A4F300BFA18F /* Loads.swift */; };
 		CDEB80302720B2C50019803E /* BackgroundColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */; };
 		CDEB80322720C02D0019803E /* LoadTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB80312720C02D0019803E /* LoadTableRowView.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		CDC97F60271879000010472C /* RodTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodTableView.swift; sourceTree = "<group>"; };
 		CDC97F6227187CAC0010472C /* RodTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodTableRowView.swift; sourceTree = "<group>"; };
 		CDC97F6527187F9B0010472C /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
-		CDE8D4C62720A4F300BFA18F /* RodLoads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodLoads.swift; sourceTree = "<group>"; };
+		CDE8D4C62720A4F300BFA18F /* Loads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loads.swift; sourceTree = "<group>"; };
 		CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorHelper.swift; sourceTree = "<group>"; };
 		CDEB80312720C02D0019803E /* LoadTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTableRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +79,7 @@
 				CDC97F4B27186CC30010472C /* SAPR_SwiftEditionApp.swift */,
 				CDC97F6427187F730010472C /* Views */,
 				CDC97F5A27186F2D0010472C /* Rod.swift */,
+				CDA73E5D27202F40002886F5 /* ConstructionDataController.swift */,
 				CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */,
 				CDC97F5C271877F70010472C /* Node.swift */,
 				CDC97F5E271878B00010472C /* LinearLoad.swift */,
@@ -101,16 +102,31 @@
 		CDC97F6427187F730010472C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CDAB4652271E0D4500F7A4EA /* EditRodView.swift */,
+				CDEB80332720C3310019803E /* RodEnter */,
+				CDEB80342720C3760019803E /* Loads */,
 				CDC97F4D27186CC30010472C /* ContentView.swift */,
-				CDC97F60271879000010472C /* RodTableView.swift */,
-				CDE8D4C62720A4F300BFA18F /* RodLoads.swift */,
-				CDEB80312720C02D0019803E /* LoadTableRowView.swift */,
 				CDA73E5B27202396002886F5 /* MainView.swift */,
-				CDA73E5D27202F40002886F5 /* ConstructionDataController.swift */,
-				CDC97F6227187CAC0010472C /* RodTableRowView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CDEB80332720C3310019803E /* RodEnter */ = {
+			isa = PBXGroup;
+			children = (
+				CDAB4652271E0D4500F7A4EA /* EditRodView.swift */,
+				CDC97F60271879000010472C /* RodTableView.swift */,
+				CDC97F6227187CAC0010472C /* RodTableRowView.swift */,
+			);
+			path = RodEnter;
+			sourceTree = "<group>";
+		};
+		CDEB80342720C3760019803E /* Loads */ = {
+			isa = PBXGroup;
+			children = (
+				CDE8D4C62720A4F300BFA18F /* Loads.swift */,
+				CDEB80312720C02D0019803E /* LoadTableRowView.swift */,
+			);
+			path = Loads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +204,7 @@
 				CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */,
 				CDA73E5C27202396002886F5 /* MainView.swift in Sources */,
 				CDC97F5B27186F2D0010472C /* Rod.swift in Sources */,
-				CDE8D4C72720A4F300BFA18F /* RodLoads.swift in Sources */,
+				CDE8D4C72720A4F300BFA18F /* Loads.swift in Sources */,
 				CDA73E5E27202F40002886F5 /* ConstructionDataController.swift in Sources */,
 				CDAB4653271E0D4500F7A4EA /* EditRodView.swift in Sources */,
 				CDEB80322720C02D0019803E /* LoadTableRowView.swift in Sources */,

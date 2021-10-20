@@ -18,7 +18,7 @@ struct MainView: View {
                 Section(header: Text("Ввод данных")) {
                     NavigationLink("Стержни", destination: RodTableView(ConctructionDC: ConctructionDC))
                         .tag(0)
-                    NavigationLink("Нагрузки", destination: RodLoads())
+                    NavigationLink("Нагрузки", destination: Loads(ConctructionDC: ConctructionDC))
                         .tag(1)
                 }
             }

@@ -17,7 +17,7 @@ struct LoadTableRowView: View {
     var body: some View {
         ZStack {
             
-            getBackColor(with: 1, colorScheme: colorScheme)
+            getBackColor(with: rowID, colorScheme: colorScheme)
                 .frame(height: 25)
             
             HStack {
