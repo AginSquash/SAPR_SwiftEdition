@@ -22,6 +22,7 @@
 		CDC97F6627187F9B0010472C /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F6527187F9B0010472C /* Binding-OnChange.swift */; };
 		CDE8D4C72720A4F300BFA18F /* RodLoads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8D4C62720A4F300BFA18F /* RodLoads.swift */; };
 		CDEB80302720B2C50019803E /* BackgroundColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */; };
+		CDEB80322720C02D0019803E /* LoadTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB80312720C02D0019803E /* LoadTableRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CDC97F6527187F9B0010472C /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 		CDE8D4C62720A4F300BFA18F /* RodLoads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodLoads.swift; sourceTree = "<group>"; };
 		CDEB802F2720B2C50019803E /* BackgroundColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorHelper.swift; sourceTree = "<group>"; };
+		CDEB80312720C02D0019803E /* LoadTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTableRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CDC97F4D27186CC30010472C /* ContentView.swift */,
 				CDC97F60271879000010472C /* RodTableView.swift */,
 				CDE8D4C62720A4F300BFA18F /* RodLoads.swift */,
+				CDEB80312720C02D0019803E /* LoadTableRowView.swift */,
 				CDA73E5B27202396002886F5 /* MainView.swift */,
 				CDA73E5D27202F40002886F5 /* ConstructionDataController.swift */,
 				CDC97F6227187CAC0010472C /* RodTableRowView.swift */,
@@ -188,6 +191,7 @@
 				CDE8D4C72720A4F300BFA18F /* RodLoads.swift in Sources */,
 				CDA73E5E27202F40002886F5 /* ConstructionDataController.swift in Sources */,
 				CDAB4653271E0D4500F7A4EA /* EditRodView.swift in Sources */,
+				CDEB80322720C02D0019803E /* LoadTableRowView.swift in Sources */,
 				CDC97F4C27186CC30010472C /* SAPR_SwiftEditionApp.swift in Sources */,
 				CDC97F5D271877F70010472C /* Node.swift in Sources */,
 				CDC97F61271879000010472C /* RodTableView.swift in Sources */,
