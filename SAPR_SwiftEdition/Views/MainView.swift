@@ -10,12 +10,15 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var ConctructionDC = ConstructionDataController()
+    @State private var selected: Int? = 0
     
     var body: some View {
         NavigationView {
-            List {
+            List(selection: $selected) {
                 NavigationLink("RodTableView", destination: RodTableView(ConctructionDC: ConctructionDC))
+                    .tag(0)
                 NavigationLink("ContentView", destination: ContentView())
+                    .tag(1)
             }
             Text("Select a Note")
         }.toolbar {
