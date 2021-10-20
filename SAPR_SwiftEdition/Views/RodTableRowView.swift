@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 
 struct RodTableRowView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let column_width: CGFloat?
     let rod: Rod
     
@@ -24,9 +26,17 @@ struct RodTableRowView: View {
             
             Group {
                 if rod.id % 2 == 0 {
-                    Color.init(red: 35/255, green: 35/255, blue: 40/255)
+                    if colorScheme == .light {
+                        Color.init(red: 255/255, green: 255/255, blue: 255/255)
+                    } else {
+                        Color.init(red: 35/255, green: 35/255, blue: 40/255)
+                    }
                 } else {
-                    Color.init(red: 45/255, green: 45/255, blue: 50/255)
+                    if colorScheme == .light {
+                        Color.init(red: 244/255, green: 245/255, blue: 245/255)
+                    } else {
+                        Color.init(red: 45/255, green: 45/255, blue: 50/255)
+                    }
                 }
             }
             .frame(height: 25)
