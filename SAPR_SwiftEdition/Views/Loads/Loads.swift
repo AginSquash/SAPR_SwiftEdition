@@ -12,11 +12,12 @@ struct Loads: View {
     
     @ObservedObject var ConctructionDC: ConstructionDataController
     
+    @State private var showAllLoadView: Bool = false
+    
     var body: some View {
         HStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    //.foregroundColor(Color.init(red: 39/255, green: 80/255, blue: 171/255)) /// <- грязный цвет ахаха
                     .foregroundColor(Color.init(red: 0/255, green: 70/255, blue: 184/255))
                     .shadow(radius: 15)
                 VStack {
@@ -26,10 +27,25 @@ struct Loads: View {
                         Text("Распределенная нагрузка")
                             .frame(width: Loads.column_width)
                         
-                    }.foregroundColor(.white)
+                    }
+                    ScrollView(.vertical, showsIndicators: true) {
+                        VStack(spacing: 0) {
+                            ForEach(0..<ConctructionDC.Loads.count) { rowID in
+                                LoadTableRowView(rowID: rowID, load: ConctructionDC.Loads[rowID])
+                                    
+                            }
+                        }
+                    }
+                    Button("Add") {
+                        showAllLoadView = true
+                    }
                         Spacer()
                 }
+                .foregroundColor(.white)
                 .padding()
+                .sheet(isPresented: $showAllLoadView) {
+                    AddLoadView(id_range: [1, 2, 3, 4])
+                }
             }
             
             Spacer()
