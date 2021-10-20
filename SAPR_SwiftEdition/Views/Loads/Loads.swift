@@ -17,44 +17,8 @@ struct Loads: View {
     
     var body: some View {
         HStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .foregroundColor(Color.init(red: 0/255, green: 70/255, blue: 184/255))
-                    .shadow(radius: 15)
-                VStack {
-                    HStack {
-                        Text("Номер стержня")
-                            .frame(width: Loads.column_width)
-                        Text("Распределенная нагрузка")
-                            .frame(width: Loads.column_width)
-                        
-                    }
-                    ScrollView(.vertical, showsIndicators: true) {
-                        VStack(spacing: 0) {
-                            ForEach(ConctructionDC.Loads) { load in
-                                LoadTableRowView(rowID: load.id, load: load)
-                            }
-                        }
-                    }
-                    Button("Add") {
-                        if getIDRange().isEmpty {
-                            showRodsSettedAlert = true
-                            return
-                        }
-                        showAllLoadView = true
-                    }
-                    
-                    Spacer()
-                }
-                .foregroundColor(.white)
-                .padding()
-                .sheet(isPresented: $showAllLoadView) {
-                    AddLoadView(id_range: getIDRange(), ConctructionDC: ConctructionDC)
-                }
-                .alert(isPresented: $showRodsSettedAlert) {
-                    Alert(title: Text("Alert"), message: Text("Все силы уже установлены"), dismissButton: .cancel())
-                }
-            }
+            
+            LinearLoadsView
             
             Spacer()
             
@@ -75,6 +39,47 @@ struct Loads: View {
             }
         }
         .padding()
+    }
+    
+    var LinearLoadsView: some View {
+        return ZStack {
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .foregroundColor(Color.init(red: 0/255, green: 70/255, blue: 184/255))
+                .shadow(radius: 15)
+            VStack {
+                HStack {
+                    Text("Номер стержня")
+                        .frame(width: Loads.column_width)
+                    Text("Распределенная нагрузка")
+                        .frame(width: Loads.column_width)
+                    
+                }
+                ScrollView(.vertical, showsIndicators: true) {
+                    VStack(spacing: 0) {
+                        ForEach(ConctructionDC.Loads) { load in
+                            LoadTableRowView(rowID: load.id, load: load)
+                        }
+                    }
+                }
+                Button("Add") {
+                    if getIDRange().isEmpty {
+                        showRodsSettedAlert = true
+                        return
+                    }
+                    showAllLoadView = true
+                }
+                
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .padding()
+            .sheet(isPresented: $showAllLoadView) {
+                AddLoadView(id_range: getIDRange(), ConctructionDC: ConctructionDC)
+            }
+            .alert(isPresented: $showRodsSettedAlert) {
+                Alert(title: Text("Alert"), message: Text("Все силы уже установлены"), dismissButton: .cancel())
+            }
+        }
     }
     
     func getIDRange() -> [Int] {
