@@ -37,6 +37,7 @@ struct RodTableView: View {
             ScrollView(.vertical, showsIndicators: true) {
                     ForEach(Rods, id: \.id) { rod in
                         RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
+                            .padding(.bottom, -5)
                     }
             }
             
