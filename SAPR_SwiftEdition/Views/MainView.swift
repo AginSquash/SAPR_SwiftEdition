@@ -15,10 +15,12 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List(selection: $selected) {
-                NavigationLink("RodTableView", destination: RodTableView(ConctructionDC: ConctructionDC))
-                    .tag(0)
-                NavigationLink("ContentView", destination: ContentView())
-                    .tag(1)
+                Section(header: Text("Ввод данных")) {
+                    NavigationLink("Стержни", destination: RodTableView(ConctructionDC: ConctructionDC))
+                        .tag(0)
+                    NavigationLink("ContentView", destination: ContentView())
+                        .tag(1)
+                }
             }
             Text("Select a Note")
         }.toolbar {
