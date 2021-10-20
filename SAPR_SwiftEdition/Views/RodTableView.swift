@@ -78,7 +78,15 @@ struct RodTableView: View {
     }
     
     func deleteRod(_ rod: Rod) {
+        withAnimation {
+            _ = ConctructionDC.Rods.remove(at: rod.id - 1)
+        }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            for i in 0..<ConctructionDC.Rods.count {
+                ConctructionDC.Rods[i].id = i + 1
+            }
+        }
     }
     
     func updateRod(with id: Int, L: Float, A: Float, E: Float, Sigma: Float) {
