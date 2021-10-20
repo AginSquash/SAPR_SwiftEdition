@@ -11,8 +11,8 @@ import SwiftUI
 struct SAPR_SwiftEditionApp: App {
     var body: some Scene {
         WindowGroup {
-            RodTableView()
-                .frame(width: 700, height: 700)
+            MainView()
+                .frame(width: 900, height: 700)
         }
     }
 }
