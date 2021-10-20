@@ -32,7 +32,8 @@ struct Loads: View {
                             .frame(width: Loads.column_width)
                         Text("Распределенная нагрузка")
                             .frame(width: Loads.column_width)
-                    }.foregroundColor(.white)
+                    }
+                    .foregroundColor(.white)
                         Spacer()
                 }
                 .padding()
@@ -51,13 +52,25 @@ struct Loads: View {
                     Text("Номер стержня")
                         .frame(width: Loads.column_width)
                     Text("Распределенная нагрузка")
+                        .multilineTextAlignment(.center)
                         .frame(width: Loads.column_width)
-                    
+                    Spacer()
+                        .frame(width: 25, height: 25, alignment: .center)
                 }
                 ScrollView(.vertical, showsIndicators: true) {
                     VStack(spacing: 0) {
                         ForEach(ConctructionDC.Loads) { load in
-                            LoadTableRowView(rowID: load.id, load: load)
+                            HStack(spacing: 0) {
+                                // change color!!!
+                                LoadTableRowView(rowID: load.id, load: load)
+                                Button(action: { deleteLinearLoad(with: load.id) }) {
+                                    Image(systemName: "trash")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 15, alignment: .center)
+                                }
+                            }
+                            .frame(height: 25)
                         }
                     }
                 }
@@ -93,6 +106,12 @@ struct Loads: View {
         }
         
         return id_range
+    }
+    
+    func deleteLinearLoad(with id: Int) {
+        withAnimation {
+            ConctructionDC.Loads.removeAll(where: { $0.id == id })
+        }
     }
 }
 
