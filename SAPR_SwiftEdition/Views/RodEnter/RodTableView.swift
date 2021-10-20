@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RodTableView: View {
+    @Environment(\.colorScheme) var colorScheme
     static let column_width: CGFloat? = 100
     
     @ObservedObject var ConctructionDC: ConstructionDataController
@@ -35,28 +36,36 @@ struct RodTableView: View {
                 
             }
             
-           
             ScrollView(.vertical, showsIndicators: true) {
-                ForEach(ConctructionDC.Rods, id: \.id) { rod in
-                    HStack {
-                        RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
-                        
-                        Button(action: { editRod(rod) } ) {
-                            Image(systemName: "pencil")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 25, height: 15, alignment: .center)
-                        }
-                        Button(action: { self.rodOnDelete = rod } ) {
-                            Image(systemName: "trash")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 25, height: 15, alignment: .center)
+                VStack(spacing: 0) {
+                    ForEach(ConctructionDC.Rods, id: \.id) { rod in
+                        ZStack {
+                            
+                            getBackColor(with: rod.id, colorScheme: colorScheme)
+                            
+                            HStack {
+                                RodTableRowView(column_width: RodTableView.column_width, rod: rod, updateRod: self.updateRod)
+                                    .frame(height: 25)
+                                
+                                Button(action: { editRod(rod) } ) {
+                                    Image(systemName: "pencil")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 15, alignment: .center)
+                                }
+                                
+                                Button(action: { self.rodOnDelete = rod } ) {
+                                    Image(systemName: "trash")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 15, alignment: .center)
+                                }
+                                
                             }
                         }
-                        .padding(.bottom, -5)
                         .transition(.opacity)
                     }
+                }
             }
             
             Button("Add", action: {

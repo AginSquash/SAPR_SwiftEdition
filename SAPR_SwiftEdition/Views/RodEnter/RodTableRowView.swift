@@ -22,27 +22,21 @@ struct RodTableRowView: View {
     @State private var Sigma: String = ""
     
     var body: some View {
-        ZStack {
-            
-            getBackColor(with: rod.id, colorScheme: colorScheme)
-                .frame(height: 25)
-            
-            HStack {
-                Text("\(rod.id)")
+        HStack {
+            Text("\(rod.id)")
+                .frame(width: column_width)
+            Group {
+                Text("\(rod.L)")
                     .frame(width: column_width)
-                Group {
-                    Text("\(rod.L)")
-                        .frame(width: column_width)
-                    Text("\(rod.A)")
-                        .frame(width: column_width)
-                    Text("\(rod.E)")
-                        .frame(width: column_width)
-                    Text("\(rod.Sigma)")
-                        .frame(width: column_width)
-                }
-                .multilineTextAlignment(.trailing)
-                
+                Text("\(rod.A)")
+                    .frame(width: column_width)
+                Text("\(rod.E)")
+                    .frame(width: column_width)
+                Text("\(rod.Sigma)")
+                    .frame(width: column_width)
             }
+            .multilineTextAlignment(.trailing)
+            
         }
     }
     
