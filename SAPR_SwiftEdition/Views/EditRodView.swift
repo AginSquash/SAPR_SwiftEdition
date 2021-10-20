@@ -117,9 +117,11 @@ struct EditRodView: View {
             return
         }
         
-        updateRod(rod.id, L, A, E, Sigma)
-        
-        closeView()
+        withAnimation { /// Check  on updated macOS 
+            updateRod(rod.id, L, A, E, Sigma)
+            
+            closeView()
+        }
     }
     
     func areAnyChanges() -> Bool {
