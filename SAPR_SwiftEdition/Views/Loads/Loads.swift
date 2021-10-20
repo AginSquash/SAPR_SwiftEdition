@@ -13,6 +13,7 @@ struct Loads: View {
     @ObservedObject var ConctructionDC: ConstructionDataController
     
     @State private var showAllLoadView: Bool = false
+    @State private var showRodsSettedAlert: Bool = false
     
     var body: some View {
         HStack {
@@ -30,21 +31,28 @@ struct Loads: View {
                     }
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(spacing: 0) {
-                            ForEach(0..<ConctructionDC.Loads.count) { rowID in
-                                LoadTableRowView(rowID: rowID, load: ConctructionDC.Loads[rowID])
-                                    
+                            ForEach(ConctructionDC.Loads) { load in
+                                LoadTableRowView(rowID: load.id, load: load)
                             }
                         }
                     }
                     Button("Add") {
+                        if getIDRange().isEmpty {
+                            showRodsSettedAlert = true
+                            return
+                        }
                         showAllLoadView = true
                     }
-                        Spacer()
+                    
+                    Spacer()
                 }
                 .foregroundColor(.white)
                 .padding()
                 .sheet(isPresented: $showAllLoadView) {
-                    AddLoadView(id_range: [1, 2, 3, 4])
+                    AddLoadView(id_range: getIDRange(), ConctructionDC: ConctructionDC)
+                }
+                .alert(isPresented: $showRodsSettedAlert) {
+                    Alert(title: Text("Alert"), message: Text("Все силы уже установлены"), dismissButton: .cancel())
                 }
             }
             
@@ -67,6 +75,19 @@ struct Loads: View {
             }
         }
         .padding()
+    }
+    
+    func getIDRange() -> [Int] {
+        let alreadySettedRods = ConctructionDC.Loads
+        
+        var id_range = [Int]()
+        for rod in ConctructionDC.Rods {
+            if alreadySettedRods.contains(where: { $0.id == rod.id }) == false {
+                id_range.append(rod.id)
+            }
+        }
+        
+        return id_range
     }
 }
 
