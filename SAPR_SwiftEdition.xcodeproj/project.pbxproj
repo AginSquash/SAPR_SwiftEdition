@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDA73E5C27202396002886F5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA73E5B27202396002886F5 /* MainView.swift */; };
 		CDAB4653271E0D4500F7A4EA /* EditRodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB4652271E0D4500F7A4EA /* EditRodView.swift */; };
 		CDC97F4C27186CC30010472C /* SAPR_SwiftEditionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F4B27186CC30010472C /* SAPR_SwiftEditionApp.swift */; };
 		CDC97F4E27186CC30010472C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC97F4D27186CC30010472C /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDA73E5B27202396002886F5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CDAB4652271E0D4500F7A4EA /* EditRodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRodView.swift; sourceTree = "<group>"; };
 		CDC97F4827186CC30010472C /* SAPR_SwiftEdition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPR_SwiftEdition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC97F4B27186CC30010472C /* SAPR_SwiftEditionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPR_SwiftEditionApp.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				CDAB4652271E0D4500F7A4EA /* EditRodView.swift */,
 				CDC97F4D27186CC30010472C /* ContentView.swift */,
 				CDC97F60271879000010472C /* RodTableView.swift */,
+				CDA73E5B27202396002886F5 /* MainView.swift */,
 				CDC97F6227187CAC0010472C /* RodTableRowView.swift */,
 			);
 			path = Views;
@@ -171,6 +174,7 @@
 				CDC97F6327187CAC0010472C /* RodTableRowView.swift in Sources */,
 				CDC97F4E27186CC30010472C /* ContentView.swift in Sources */,
 				CDC97F5F271878B00010472C /* LinearLoad.swift in Sources */,
+				CDA73E5C27202396002886F5 /* MainView.swift in Sources */,
 				CDC97F5B27186F2D0010472C /* Rod.swift in Sources */,
 				CDAB4653271E0D4500F7A4EA /* EditRodView.swift in Sources */,
 				CDC97F4C27186CC30010472C /* SAPR_SwiftEditionApp.swift in Sources */,
