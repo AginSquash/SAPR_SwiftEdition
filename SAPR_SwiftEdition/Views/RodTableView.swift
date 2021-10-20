@@ -13,6 +13,7 @@ struct RodTableView: View {
     @ObservedObject var ConctructionDC: ConstructionDataController
     
     @State private var editRodValue: Rod? = nil
+    @State private var rodOnDelete: Rod? = nil
     
     var body: some View {
         VStack {
@@ -46,13 +47,15 @@ struct RodTableView: View {
                                 .scaledToFit()
                                 .frame(width: 25, height: 15, alignment: .center)
                         }
-                        Button(action: { deleteRod(rod) } ) {
+                        Button(action: { self.rodOnDelete = rod } ) {
                             Image(systemName: "trash")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 15, alignment: .center)
                             }
-                        }.padding(.bottom, -5)
+                        }
+                        .padding(.bottom, -5)
+                        .transition(.opacity)
                     }
             }
             
@@ -69,6 +72,9 @@ struct RodTableView: View {
         .padding()
         .sheet(item: $editRodValue, onDismiss: nil) { value in
             EditRodView(rod: value, updateRod: self.updateRod)
+        }
+        .alert(item: $rodOnDelete) { rod in
+            Alert(title: Text("Удаление!"), message: Text("Вы действительно хотите удалить стержень №\(rod.id)?"), primaryButton: .destructive(Text("Да"), action: { deleteRod(rod) }), secondaryButton: .cancel())
         }
         
     }

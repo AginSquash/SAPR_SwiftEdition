@@ -8,11 +8,11 @@
 import Foundation
 
 struct Rod: Codable, Identifiable, Hashable {
-    let id: Int
-    let L: Float /// Length
-    let A: Float /// Area
-    let E: Float /// Elasticity
-    let Sigma: Float /// Permissible voltage
+    var id: Int
+    var L: Float /// Length
+    var A: Float /// Area
+    var E: Float /// Elasticity
+    var Sigma: Float /// Permissible voltage
     
     static func sample(with id: Int) -> Rod {
         Rod(id: id, L: 0, A: 0, E: 0, Sigma: 0)
