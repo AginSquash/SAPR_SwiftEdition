@@ -18,6 +18,7 @@ struct AddLoadView: View {
     static let column_width: CGFloat? = 125
     
     let id_range: [Int]
+    let isLinearLoad: Bool
     @ObservedObject var ConctructionDC: ConstructionDataController
     
     @State private var selectedID: Int = -1
@@ -28,9 +29,9 @@ struct AddLoadView: View {
         VStack {
             
             HStack {
-                Text("Номер стержня")
+                Text(isLinearLoad ? "Номер стержня": "Номер узла")
                     .frame(width: AddLoadView.column_width)
-                Text("Распределенная нагрузка")
+                Text(isLinearLoad ? "Распределенная нагрузка" : "Сосредоточенная нагрузка")
                     .frame(width: AddLoadView.column_width)
             }
             
@@ -69,6 +70,9 @@ struct AddLoadView: View {
     
     func save() {
         guard selectedID != -1 else {
+            var alertText = ""
+            if isLinearLoad { alertText = "Выберите стержень" }
+            else { alertText = "Выберите узел" }
             alert = AlertType(isError: true, text: "Выберите стержень")
             return
         }
@@ -78,8 +82,11 @@ struct AddLoadView: View {
             return
         }
         
-        ConctructionDC.Loads.append(LinearLoad(id: id_range[selectedID], q: wrapped_value))
-        
+        if isLinearLoad {
+            ConctructionDC.Loads.append(LinearLoad(id: id_range[selectedID], q: wrapped_value))
+        } else {
+            ConctructionDC.Nodes.append(Node(id: id_range[selectedID], F: wrapped_value))
+        }
         closeView()
     }
     
@@ -90,6 +97,6 @@ struct AddLoadView: View {
 
 struct AddLoadView_Previews: PreviewProvider {
     static var previews: some View {
-        AddLoadView(id_range: [1, 2, 3], ConctructionDC: .preview)
+        AddLoadView(id_range: [1, 2, 3], isLinearLoad: true, ConctructionDC: .preview)
     }
 }
