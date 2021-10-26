@@ -56,6 +56,7 @@ struct Loads: View {
                                     Image(systemName: "trash")
                                         .resizable()
                                         .scaledToFit()
+                                        .foregroundColor(.primary)
                                         .frame(width: 25, height: 15, alignment: .center)
                                 }
                             }
@@ -69,7 +70,7 @@ struct Loads: View {
                         return
                     }
                     showAddLinearLoadView = true
-                }
+                }.foregroundColor(.primary)
                 
                 Spacer()
             }
@@ -115,11 +116,13 @@ struct Loads: View {
                                     Image(systemName: "trash")
                                         .resizable()
                                         .scaledToFit()
+                                        .foregroundColor(.primary)
                                         .frame(width: 25, height: 15, alignment: .center)
                                 }
                             }
                             .frame(height: 25)
                         }
+                           
                     }
                 }
                 Button("Add") {
@@ -129,7 +132,7 @@ struct Loads: View {
                     }
                     
                     showAddNodeLoadView = true
-                }
+                }.foregroundColor(.primary)
                 
                 Spacer()
             }
