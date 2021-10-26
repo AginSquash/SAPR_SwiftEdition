@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct SAPR_SwiftEditionApp: App {
-    @ObservedObject var ConctructionDC = ConstructionDataController.preview
+    @ObservedObject var ConctructionDC = ConstructionDataController()
     @State private var showExport = false
     @State private var showImport = false
     

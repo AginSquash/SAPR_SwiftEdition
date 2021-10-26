@@ -38,7 +38,7 @@ struct EditRodView: View {
                     .frame(width: RodTableView.column_width)
                 Text("Площадь сечения A")
                     .frame(width: RodTableView.column_width)
-                Text("Предел прочночти")
+                Text("Предел прочности")
                     .frame(width: RodTableView.column_width)
             }
             

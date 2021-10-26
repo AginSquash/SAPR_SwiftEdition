@@ -29,7 +29,7 @@ struct RodTableView: View {
                     .frame(width: RodTableView.column_width)
                 Text("Площадь сечения A")
                     .frame(width: RodTableView.column_width)
-                Text("Предел прочночти")
+                Text("Предел прочности")
                     .frame(width: RodTableView.column_width)
                 
                 /// free space for Edit and Delete buttons
@@ -80,6 +80,14 @@ struct RodTableView: View {
                         self.ConctructionDC.Rods.append(Rod(id: self.ConctructionDC.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
                     }
                 })
+                Button("Reset", action: {
+                    withAnimation {
+                        ConctructionDC.Rods.removeAll()
+                    }
+                        ConctructionDC.Nodes.removeAll()
+                        ConctructionDC.Loads.removeAll()
+                        ConctructionDC.Zadelka = .Left
+                })
             }
     
             Picker(selection: zadelka, label: Text("Заделка находится:")) {
@@ -107,6 +115,11 @@ struct RodTableView: View {
     func deleteRod(_ rod: Rod) {
         withAnimation(.easeIn(duration: 0.4)) {
             _ = ConctructionDC.Rods.remove(at: rod.id - 1)
+            if ConctructionDC.Rods.isEmpty {
+                ConctructionDC.Nodes.removeAll()
+                ConctructionDC.Loads.removeAll()
+                ConctructionDC.Zadelka = .Left
+            }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -128,6 +141,9 @@ struct RodTableView: View {
     }
     
     init(ConctructionDC: ConstructionDataController) {
+        _rodOnDelete.wrappedValue = nil
+        _editRodValue.wrappedValue = nil
+        
         self.ConctructionDC = ConctructionDC
         self.zadelka = Binding<Int>(get: { ConctructionDC.Zadelka.rawValue },
                                 set: { ConctructionDC.Zadelka = SupportType(rawValue: $0) })

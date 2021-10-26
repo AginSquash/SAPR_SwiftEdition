@@ -26,9 +26,9 @@ struct RodTableRowView: View {
             Group {
                 Text("\(rod.L)")
                     .frame(width: column_width)
-                Text("\(rod.A)")
-                    .frame(width: column_width)
                 Text("\(rod.E)")
+                    .frame(width: column_width)
+                Text("\(rod.A)")
                     .frame(width: column_width)
                 Text("\(rod.Sigma)")
                     .frame(width: column_width)

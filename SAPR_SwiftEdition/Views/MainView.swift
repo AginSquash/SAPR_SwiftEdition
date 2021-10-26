@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
-    @ObservedObject var ConctructionDC = ConstructionDataController()
-    @State private var selected: Int? = 1
+    @ObservedObject var ConctructionDC: ConstructionDataController
+    @State private var selected: Int? = 0
     
     var body: some View {
         NavigationView {
@@ -39,6 +39,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(ConctructionDC: .preview)
     }
 }
