@@ -31,4 +31,16 @@ class ConstructionDataController: ObservableObject {
         let cdc = ConstructionDataController(inMemory: true)
         return cdc
     }()
+    
+    func getSaprFile() -> SAPR_Document {
+        var file = SAPR_File()
+        
+        file.Rods = self.Rods
+        file.Loads = self.Loads
+        file.Nodes = self.Nodes
+        file.Zadelka = self.Zadelka
+        
+        let document = SAPR_Document(sapr: file)
+        return document
+    }
 }
