@@ -16,6 +16,8 @@ struct RodTableView: View {
     @State private var editRodValue: Rod? = nil
     @State private var rodOnDelete: Rod? = nil
     
+    @State private var selected: Int = ConstructionDataController.
+    
     var body: some View {
         VStack {
             HStack {
@@ -69,14 +71,23 @@ struct RodTableView: View {
                 }
             }
             
-            Button("Add", action: {
-                self.editRodValue = Rod.sample(with: ConctructionDC.Rods.count + 1)
-            })
-            Button("Random", action: {
-                for _ in 0...5 {
-                    self.ConctructionDC.Rods.append(Rod(id: self.ConctructionDC.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
-                }
-            })
+            HStack {
+                Button("Add", action: {
+                    self.editRodValue = Rod.sample(with: ConctructionDC.Rods.count + 1)
+                })
+                Button("Random", action: {
+                    for _ in 0...5 {
+                        self.ConctructionDC.Rods.append(Rod(id: self.ConctructionDC.Rods.count + 1, L: Float.random(in: 0...20), A: Float.random(in: 0...20), E: Float.random(in: 0...20), Sigma: Float.random(in: 0...20)))
+                    }
+                })
+            }
+    
+            Picker(selection: $selected, label: Text("Заделка находится:")) {
+                Text("Слева").tag(0)
+                Text("Справа").tag(1)
+                Text("С двух сторон").tag(2)
+            }
+            .pickerStyle(SegmentedPickerStyle())
             Spacer()
         }
         .padding()
@@ -86,6 +97,13 @@ struct RodTableView: View {
         .alert(item: $rodOnDelete) { rod in
             Alert(title: Text("Удаление!"), message: Text("Вы действительно хотите удалить стержень №\(rod.id)?"), primaryButton: .destructive(Text("Да"), action: { deleteRod(rod) }), secondaryButton: .cancel())
         }
+        .onDisappear(perform: {
+            guard let zadelka = SupportType(rawValue: selected) else {
+                fatalError("zadelka error")
+            }
+            print(zadelka)
+            self.ConctructionDC.Zadelka = zadelka
+        })
         
     }
     
