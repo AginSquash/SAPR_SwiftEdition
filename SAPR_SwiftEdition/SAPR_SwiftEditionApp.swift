@@ -11,6 +11,7 @@ import SwiftUI
 struct SAPR_SwiftEditionApp: App {
     @ObservedObject var ConctructionDC = ConstructionDataController.preview
     @State private var showExport = false
+    @State private var showImport = false
     
     var body: some Scene {
         WindowGroup {
@@ -24,11 +25,28 @@ struct SAPR_SwiftEditionApp: App {
                         print(error.localizedDescription)
                     }
                 }
+                .fileImporter(isPresented: $showImport, allowedContentTypes: [.data], allowsMultipleSelection: false) { result in
+                    switch result {
+                    case .success(let url):
+                        guard let url = url.first else {
+                            print("No one file choosed")
+                            return
+                        }
+                        print("Loaded from \(url)")
+                        ConctructionDC.loadFromFile(with: url)
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
         }.commands {
             CommandGroup(after: CommandGroupPlacement.newItem) {
                 Button("Save As") {
                     showExport = true
                 }.keyboardShortcut("S")
+                Button("Import") {
+                    showImport = true
+                }.keyboardShortcut("I")
             }
         }
     }
