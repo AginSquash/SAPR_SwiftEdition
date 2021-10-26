@@ -104,10 +104,22 @@ struct EditRodView: View {
             alert = AlertType(isError: true, text: "L должен быть числом")
             return
         }
+       
+        guard L>0 else {
+            alert = AlertType(isError: true, text: "L должен быть больше 0")
+            return
+        }
+
         guard let A = Float(self.A) else {
             alert = AlertType(isError: true, text: "A должен быть числом")
             return
         }
+
+        guard A>0 else {
+            alert = AlertType(isError: true, text: "A должен быть больше 0")
+            return
+        }
+
         guard let E = Float(self.E) else {
             alert = AlertType(isError: true, text: "E должен быть числом")
             return
