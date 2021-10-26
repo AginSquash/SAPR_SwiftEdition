@@ -49,11 +49,11 @@ struct EditRodView: View {
                     TextField("", text: $L, onEditingChanged:
                                 { _ in NumberOnly(text: $L) })
                         .frame(width: RodTableView.column_width)
-                    TextField("", text: $A, onEditingChanged:
-                                { _ in NumberOnly(text: $A) })
-                        .frame(width: RodTableView.column_width)
                     TextField("", text: $E, onEditingChanged:
                                 { _ in NumberOnly(text: $E) })
+                        .frame(width: RodTableView.column_width)
+                    TextField("", text: $A, onEditingChanged:
+                                { _ in NumberOnly(text: $A) })
                         .frame(width: RodTableView.column_width)
                     TextField("", text: $Sigma, onEditingChanged:
                                 { _ in NumberOnly(text: $Sigma) })
@@ -105,7 +105,7 @@ struct EditRodView: View {
             return
         }
        
-        guard L>0 else {
+        guard L > 0 else {
             alert = AlertType(isError: true, text: "L должен быть больше 0")
             return
         }
@@ -115,7 +115,7 @@ struct EditRodView: View {
             return
         }
 
-        guard A>0 else {
+        guard A > 0 else {
             alert = AlertType(isError: true, text: "A должен быть больше 0")
             return
         }
