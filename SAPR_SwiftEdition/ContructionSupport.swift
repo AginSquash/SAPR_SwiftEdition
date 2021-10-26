@@ -12,7 +12,7 @@ enum SupportType: Int, Codable {
     case Right = 1
     case Both = 2
     
-    init?(rawValue: Int) {
+    init(rawValue: Int) {
         switch rawValue {
         case 0: self = .Left
         case 1: self = .Right
