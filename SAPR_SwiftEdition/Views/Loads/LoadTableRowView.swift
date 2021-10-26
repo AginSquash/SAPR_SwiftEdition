@@ -16,10 +16,10 @@ struct LoadTableRowView: View {
     
     var body: some View {
         ZStack {
-            
+            /*
             getBackColor(with: rowID, colorScheme: colorScheme)
                 .frame(height: 25)
-            
+            */
             HStack {
                 Text(id)
                     .frame(width: Loads.column_width)
