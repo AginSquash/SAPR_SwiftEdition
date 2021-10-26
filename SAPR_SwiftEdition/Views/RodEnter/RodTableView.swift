@@ -91,11 +91,11 @@ struct RodTableView: View {
             Spacer()
         }
         .padding()
-        .sheet(item: $editRodValue, onDismiss: nil) { value in
-            EditRodView(rod: value, updateRod: self.updateRod)
-        }
         .alert(item: $rodOnDelete) { rod in
             Alert(title: Text("Удаление!"), message: Text("Вы действительно хотите удалить стержень №\(rod.id)?"), primaryButton: .destructive(Text("Да"), action: { deleteRod(rod) }), secondaryButton: .cancel())
+        }
+        .sheet(item: $editRodValue, onDismiss: nil) { value in
+            EditRodView(rod: value, updateRod: self.updateRod)
         }
         
     }
