@@ -43,4 +43,15 @@ class ConstructionDataController: ObservableObject {
         let document = SAPR_Document(sapr: file)
         return document
     }
+    
+    func loadFromFile(with url: URL) {
+        if let data = try? Data(contentsOf: url) {
+            if let decoded = try? JSONDecoder().decode(SAPR_File.self, from: data) {
+                self.Rods = decoded.Rods
+                self.Loads = decoded.Loads
+                self.Nodes = decoded.Nodes
+                self.Zadelka = decoded.Zadelka
+            }
+        }
+    }
 }
